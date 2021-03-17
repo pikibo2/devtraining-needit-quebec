@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element attributes="encode_utf8=false" label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="itd" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="ITD" sequence="0" value="itd"/>
+                <element inactive_on_update="false" label="PSSD" sequence="1" value="pssd"/>
+                <element inactive_on_update="false" label="BKSD" sequence="2" value="bksd"/>
+                <element inactive_on_update="false" label="LSD" sequence="3" value="lsd"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="information" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Information" sequence="0" value="information"/>
+                <element inactive_on_update="false" label="Cash advance" sequence="1" value="cash advance"/>
+                <element inactive_on_update="false" label="Reimbursement" sequence="2" value="reimbursement"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
+</database>
